@@ -360,6 +360,12 @@ h3{
   margin-top: var(--m-1);
 }
 
+.sub-btn{
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid var(--color-dark);
+}
+
 /* DIV 2 */
 
 .div-2 {

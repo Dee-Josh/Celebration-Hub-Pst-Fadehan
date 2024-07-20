@@ -223,6 +223,21 @@ const wishText = document.querySelector('.wish-text');
 const nameW = document.querySelector('.enter-wish input'); 
 const wishContainer = document.querySelector('.wishes'); 
 
+// Create a new Date object
+const currentDate = new Date();
+
+// Define arrays for month names and date suffixes
+const months = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+const date = currentDate.getDate();
+const monthIndex = currentDate.getMonth();
+
+// Format the date in "Month Day" format
+const formattedDate = `${months[monthIndex]} ${date}`;
+
+
 submitBtn.addEventListener("click", ()=>{
     let text = wishText.value;
     let theName = nameW.value;
@@ -231,7 +246,7 @@ submitBtn.addEventListener("click", ()=>{
         <i class="fa-solid fa-cake"></i>
         <div class="wish-details">
             <h3 class="wish-name">${theName}</h3>
-            <p class="wish-date">March 2</p>
+            <p class="wish-date">${formattedDate}</p>
             <p class="wish-info">${text}</p>
         </div>
     </div>
@@ -239,8 +254,11 @@ submitBtn.addEventListener("click", ()=>{
 
     wishContainer.innerHTML+= totalDetails;
     localStorage.setItem("data", totalDetails);
-    wishText.value="";
-    nameW.value="";
+
+    setTimeout(() => {
+        wishText.value="";
+        nameW.value="";
+    }, 500);
 })
 
 let totalDetails = localStorage.getItem("data");
