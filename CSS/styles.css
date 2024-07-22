@@ -7,18 +7,14 @@
 
   /******* Colors *******/  /*Color mode HSL(hue, saturation, lightness)*/
  
-  /* --color-white: hsl(252, 30%, var(--white-color-lightness));
-  --color-light: hsl(252, 30%, var(--light-color-lightness)); */
   --color-gray: rgb(158, 152, 179);
-  /* --color-primary: hsl(278, 73%, 47%); */
-  /* --color-primary: hsl(var(--primary-color-hue), 73%, 47%);
-  --color-dark: hsl(252, 30%, var(--dark-color-lightness)); */
-
   --color-white: #FFF;
   --color-primary:#f7a34f;
   --color-dark: #1f1e24;
   --color-dark: #180410;
-  --color-dark: #0E0E02;
+  --color-dark: #14040e;
+  /* --color-dark: #0E0E02;
+  --color-dark: #020103; */
   --color-light: #f18b24;
 
   /******* Font and typography *******/
@@ -652,7 +648,7 @@ footer a{
     width: 300px;
     max-width: 60%;
     height: 100vh;
-    top: 74px;
+    top: 73px;
     transition: all 1s;
     right: 0;
     transform: translate(450px, 0);
@@ -660,7 +656,24 @@ footer a{
     padding: var(--m-2);
     color: var(--color-dark);
     border: 2px solid var(--color-dark);
+    list-style: none;
   }
+  
+  hr{
+    border: none;
+    border-top: 2px solid var(--color-dark);
+    margin: 20px 0;
+    width: 200%;
+    position: relative;
+    left: -33px;
+  }
+
+  .added-list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .hdr-2 ul{
     display: flex;
     flex-direction: column;

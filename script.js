@@ -254,7 +254,7 @@ submitBtn.addEventListener("click", ()=>{
 
     wishContainer.innerHTML+= totalDetails;
     localStorage.setItem("data", totalDetails);
-    storeFunctionWithExpiry("data", totalDetails, 1800000)
+    storeFunctionWithExpiry("data", totalDetails, 1800)
 
     setTimeout(() => {
         wishText.value="";
@@ -290,10 +290,12 @@ function retrieveFunction(key) {
 
     const item = JSON.parse(itemStr);
     const now = new Date().getTime();
+    // alert(now + "  "+ expiry);
 
     // Check if the function has expired
     if (now > expiry) {
         // If expired, delete from local storage and return null
+
         localStorage.removeItem(key);
         return null;
     }
