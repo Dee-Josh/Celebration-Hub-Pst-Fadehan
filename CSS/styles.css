@@ -310,7 +310,7 @@ h3{
   margin-top: var(--m-2);
   padding: var(--m-1-5);
   display: flex;
-  justify-content: center;
+  justify-content: left;
   background-color: var(--color-primary);
   border-radius: 15px;
   align-items: center;

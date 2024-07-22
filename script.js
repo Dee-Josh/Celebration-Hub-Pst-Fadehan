@@ -254,6 +254,7 @@ submitBtn.addEventListener("click", ()=>{
 
     wishContainer.innerHTML+= totalDetails;
     localStorage.setItem("data", totalDetails);
+    storeFunctionWithExpiry("data", totalDetails, 1800000)
 
     setTimeout(() => {
         wishText.value="";
@@ -261,5 +262,40 @@ submitBtn.addEventListener("click", ()=>{
     }, 500);
 })
 
-let totalDetails = localStorage.getItem("data");
+let totalDetails = retrieveFunction("data");
 totalDetails && (wishContainer.innerHTML+= totalDetails);
+
+
+
+
+
+// Setting and Deleting wish from local storage
+
+
+// Function to store a function in local storage with expiry time
+function storeFunctionWithExpiry(key, data, expirySeconds) {
+    const now = new Date();
+    const expiry = now.getTime() + (expirySeconds * 1000)  // expiry in milliseconds
+    localStorage.setItem(key, JSON.stringify(data));
+    localStorage.setItem('expiry', JSON.stringify(expiry));
+}
+
+// Function to retrieve a function from local storage
+function retrieveFunction(key) {
+    const itemStr = localStorage.getItem(key);
+    const expiry = localStorage.getItem("expiry");
+    if (!itemStr){
+        return null;
+    } 
+
+    const item = JSON.parse(itemStr);
+    const now = new Date().getTime();
+
+    // Check if the function has expired
+    if (now > expiry) {
+        // If expired, delete from local storage and return null
+        localStorage.removeItem(key);
+        return null;
+    }
+    return item; // Return the function if it's still valid
+}
