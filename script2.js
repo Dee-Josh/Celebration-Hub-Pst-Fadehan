@@ -81,6 +81,7 @@ rightBtn.addEventListener('click', ()=>{
 updateImg();
 
 let activeSlide;
+let wasAudioPlaying;
 
 function activateSlide(){
     leftBtn.style.display='none';
@@ -97,6 +98,13 @@ function activateSlide(){
         updateImg();
         slideImage.classList.toggle('animate');
     }, 5000);
+    if (audio.paused) {
+        audio.play();
+        console.log("Audio was paused but is now playing");
+        wasAudioPlaying = false;
+    }else{
+        wasAudioPlaying = true;
+    }
 }
 
 function deactivateSlide(){
@@ -108,6 +116,11 @@ function deactivateSlide(){
     clearInterval(activeSlide);
     
     slideImage.classList.remove('animate');
+    
+    if (!wasAudioPlaying) {
+        audio.pause();
+        console.log("Audio was playing but is now paused");
+    }
 }
 
 xmark.addEventListener('click', ()=>{
@@ -188,10 +201,10 @@ defaultPlay.addEventListener('click', ()=>{
 
 // FOR STOPING SONG IN GALLERY
 
-const video = document.querySelector('video');
+// const video = document.querySelector('video');
 
-video.addEventListener('click', ()=>{
-    audio.pause();
-    defaultPlay.classList.remove('fa-volume-up');
-    defaultPlay.classList.add('fa-volume-mute');
-})
+// video.addEventListener('click', ()=>{
+//     audio.pause();
+//     defaultPlay.classList.remove('fa-volume-up');
+//     defaultPlay.classList.add('fa-volume-mute');
+// })

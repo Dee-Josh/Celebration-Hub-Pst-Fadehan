@@ -202,6 +202,10 @@ h3{
   text-transform: uppercase;
 }
 
+.hdr-2 ul li{
+  color: var(--color-primary);
+}
+
 .hdr-3 .fa-bars{
   display: none;
 }
@@ -233,6 +237,15 @@ h3{
 
 .welcome-display h1 span{
   font-size: calc(var(--h1-font-size) + 8px);
+}
+
+.welcome-display h1 b{
+  font-size: calc(var(--h1-font-size) + 4px);
+}
+
+.welcome-display h1 p{
+  font-family: 'Lucida Handwriting', 'Brush Script MT', cursive;
+  font-size: calc(var(--h1-font-size) + 5px);
 }
 
 .welcome-display img{
