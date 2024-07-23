@@ -9,13 +9,27 @@
  
   --color-gray: rgb(158, 152, 179);
   --color-white: #FFF;
-  --color-primary:#f7a34f;
-  --color-dark: #1f1e24;
-  --color-dark: #180410;
-  --color-dark: #14040e;
-  /* --color-dark: #0E0E02;
-  --color-dark: #020103; */
+
+  /* COLOR DARK OPTIONS */
+  /* --color-dark: #1f1e24;
+  --color-dark: #180410; */
+
+  /* DEBATING COLOR */
+  --color-primary:#fcc38a;
+  --color-dark: #332412 ;
   --color-light: #f18b24;
+
+  /* OR */
+  /* --color-primary:#f7a34f;
+  --color-dark: #14040e;
+  --color-light: #f18b24; */
+
+  /* OR */
+  /* --color-primary:#fcc38a;
+  --color-dark: #14040e;
+  --color-light: #f18b24; */
+
+
 
   /******* Font and typography *******/
   /*.5rem = 8px | 1rem = 16px ...*/
